@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import LunchMenuForm from "./components/LunchMenuForm";
 import Roulette from "./components/Roulette";
