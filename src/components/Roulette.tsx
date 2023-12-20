@@ -31,14 +31,6 @@ const Roulette = ({
     return <div>메뉴를 등록해주세요.</div>;
   }
 
-  const handleSpinClick = () => {
-    if (!mustSpin) {
-      const newPrizeNumber = Math.floor(Math.random() * data.length);
-      setPrizeNumber(newPrizeNumber);
-      setMustSpin(true);
-    }
-  };
-
   return (
     <Wrapper>
       <Wheel
