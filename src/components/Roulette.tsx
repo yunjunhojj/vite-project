@@ -8,7 +8,7 @@ const Roulette = ({
   menus: string[];
 }) => {
   const [mustSpin, setMustSpin] = useState(false);
-  const [prizeNumber, setPrizeNumber] = useState(0);
+  const [prizeNumber] = useState(0);
 
   // string[] -> { option: '0', style: { backgroundColor: 'green', textColor: 'black' } }[] 로 변환
   // 단, backgroundColor, textColor는 랜덤으로 생성
