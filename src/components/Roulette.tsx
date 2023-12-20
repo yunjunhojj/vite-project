@@ -7,7 +7,8 @@ const Roulette = ({
 }: {
   menus: string[];
 }) => {
-  const [mustSpin, setMustSpin] = useState<boolean>(false);
+  const [mustSpin, setMustSpin] = useState(false);
+  const [prizeNumber, setPrizeNumber] = useState(0);
 
   // string[] -> { option: '0', style: { backgroundColor: 'green', textColor: 'black' } }[] 로 변환
   // 단, backgroundColor, textColor는 랜덤으로 생성
@@ -30,11 +31,19 @@ const Roulette = ({
     return <div>메뉴를 등록해주세요.</div>;
   }
 
+  const handleSpinClick = () => {
+    if (!mustSpin) {
+      const newPrizeNumber = Math.floor(Math.random() * data.length);
+      setPrizeNumber(newPrizeNumber);
+      setMustSpin(true);
+    }
+  };
+
   return (
     <Wrapper>
       <Wheel
         mustStartSpinning={mustSpin}
-        prizeNumber={3}
+        prizeNumber={prizeNumber}
         data={transformMenus(menus)}
         backgroundColors={["#3e3e3e", "#df3428"]}
         textColors={["#ffffff"]}
